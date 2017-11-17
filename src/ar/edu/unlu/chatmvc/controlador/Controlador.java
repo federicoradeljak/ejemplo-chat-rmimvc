@@ -67,6 +67,8 @@ public class Controlador implements IControladorRemoto {
 	public void conectarUsuario(String nombre) {
 		try {
 			this.usuario = (IUsuario) this.modelo.conectarUsuario(nombre);
+			this.vista.mostrarListaUsuarios((IUsuario[]) this.modelo.getUsuarios()); 
+			this.vista.mostrarChat((IMensaje[]) this.modelo.getMensajes());
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
