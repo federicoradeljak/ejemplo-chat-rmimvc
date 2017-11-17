@@ -1,16 +1,38 @@
 package ar.edu.unlu.chatmvc.servidor;
 
+import java.net.InetAddress;
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
 
 import ar.edu.unlu.chatmvc.modelo.Chat;
+import ar.edu.unlu.mvcrmi.Util;
 import ar.edu.unlu.mvcrmi.servidor.Servidor;
 
 public class AppServidor {
 
 	public static void main(String[] args) {
+		ArrayList<String> ips = Util.getIpDisponibles();
+		String ip = (String) JOptionPane.showInputDialog(
+				null, 
+				"Seleccione la IP en la que escuchará peticiones el servidor", "IP del servidor", 
+				JOptionPane.QUESTION_MESSAGE, 
+				null,
+				ips.toArray(),
+				null
+		);
+		String port = (String) JOptionPane.showInputDialog(
+				null, 
+				"Seleccione el puerto en el que escuchará peticiones el servidor", "Puerto del servidor", 
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				null,
+				8888
+		);
 		Chat modelo = new Chat();
-		Servidor servidor = new Servidor("192.168.0.16", 8888);
+		Servidor servidor = new Servidor(ip, Integer.parseInt(port));
 		try {
 			servidor.iniciar(modelo);
 		} catch (RemoteException e) {
