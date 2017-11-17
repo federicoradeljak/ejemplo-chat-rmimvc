@@ -1,6 +1,5 @@
 package ar.edu.unlu.chatmvc.servidor;
 
-import java.net.InetAddress;
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;

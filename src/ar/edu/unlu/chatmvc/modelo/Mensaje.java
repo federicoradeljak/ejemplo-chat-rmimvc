@@ -1,8 +1,13 @@
 package ar.edu.unlu.chatmvc.modelo;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Mensaje implements IMensaje {
+public class Mensaje implements IMensaje, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -744829515434409884L;
 	private LocalDateTime fecha;
 	private IUsuario usuario;
 	private String texto;
