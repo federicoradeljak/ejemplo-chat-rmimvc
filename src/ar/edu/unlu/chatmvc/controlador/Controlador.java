@@ -102,6 +102,5 @@ public class Controlador implements IControladorRemoto {
 	@Override
 	public <T extends IObservableRemoto> void setModeloRemoto(T arg0) throws RemoteException {
 		this.modelo = (IChat) arg0;
-		this.modelo.agregarObservador(this);
 	}
 }
