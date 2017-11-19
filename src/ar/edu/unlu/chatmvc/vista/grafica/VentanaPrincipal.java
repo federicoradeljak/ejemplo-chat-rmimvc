@@ -1,7 +1,5 @@
 package ar.edu.unlu.chatmvc.vista.grafica;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -36,7 +34,7 @@ public class VentanaPrincipal extends JFrame {
 	 */
 	public VentanaPrincipal() {
 		setLocationRelativeTo(null);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 551, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -64,7 +62,11 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(btnEnviar, "cell 2 1,growx");
 		
 		SwingUtilities.getRootPane(btnEnviar).setDefaultButton(btnEnviar);
-		textMensaje.requestFocusInWindow();
+		addWindowListener( new WindowAdapter() {
+		    public void windowOpened( WindowEvent e ){
+		    	textMensaje.requestFocusInWindow();
+		    }
+		}); 
 	}
 	
 	public void onClickEnviar(ActionListener listener) {

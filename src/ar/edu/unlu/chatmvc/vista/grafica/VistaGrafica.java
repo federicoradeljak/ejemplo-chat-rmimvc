@@ -4,8 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-
 import ar.edu.unlu.chatmvc.controlador.Controlador;
 import ar.edu.unlu.chatmvc.modelo.IMensaje;
 import ar.edu.unlu.chatmvc.modelo.IUsuario;
