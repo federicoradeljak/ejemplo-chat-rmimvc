@@ -3,6 +3,8 @@ package ar.edu.unlu.chatmvc.vista.grafica;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.time.format.DateTimeFormatter;
 
 import javax.swing.JFrame;
@@ -102,5 +104,9 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setTextoMensaje(String texto) {
 		this.textMensaje.setText(texto);
+	}
+	
+	public void onCloseWindow(WindowAdapter wa) {
+		addWindowStateListener(wa);
 	}
 }

@@ -18,5 +18,7 @@ public interface IChat extends IObservableRemoto {
 	void enviarMensaje(String mensaje, IUsuario usuario) throws RemoteException;
 
 	void enviarMensajeDelSistema(String mensaje) throws RemoteException;
+	
+	void cerrar(int usuarioId) throws RemoteException;
 
 }

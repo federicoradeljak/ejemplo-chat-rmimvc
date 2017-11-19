@@ -22,7 +22,7 @@ public class Chat extends ObservableRemoto implements IChat {
 		Usuario u = new Usuario(nombre);
 		this.usuarios.put(u.getId(), u);
 		this.notificarObservadores(Eventos.CAMBIO_LISTA_USUARIOS);
-		this.enviarMensajeDelSistema("Usuario "+nombre+" conectado");
+		this.enviarMensajeDelSistema("Usuario "+nombre+" conectado.");
 		return u;
 	}
 
@@ -34,7 +34,7 @@ public class Chat extends ObservableRemoto implements IChat {
 		Usuario usuario = this.usuarios.get(usuarioId);
 		this.usuarios.remove(usuarioId);
 		this.notificarObservadores(Eventos.CAMBIO_LISTA_USUARIOS);
-		this.enviarMensajeDelSistema("Usuario "+usuario.getNombre()+" desconectado");
+		this.enviarMensajeDelSistema("El usuario "+usuario.getNombre()+" se desconectó.");
 	}
 	
 	/* (non-Javadoc)
@@ -71,5 +71,9 @@ public class Chat extends ObservableRemoto implements IChat {
 	public void enviarMensajeDelSistema(String mensaje) throws RemoteException {
 		this.mensajes.add(new Mensaje(mensaje));
 		this.notificarObservadores(Eventos.NUEVO_MENSAJE);
+	}
+	
+	public void cerrar(int usuarioId) throws RemoteException {
+		this.desconectarUsuario(usuarioId);
 	}
 }

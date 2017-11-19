@@ -2,6 +2,8 @@ package ar.edu.unlu.chatmvc.vista.grafica;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import ar.edu.unlu.chatmvc.controlador.Controlador;
 import ar.edu.unlu.chatmvc.modelo.IMensaje;
@@ -27,7 +29,13 @@ public class VistaGrafica implements IVista {
 				vPrincipal.setTextoMensaje("");
 			}
 		});
-		
+		this.vPrincipal.onCloseWindow(new WindowAdapter() {
+			@Override
+            public void windowClosing(WindowEvent e) {
+                controlador.cerrarApp();
+                vPrincipal.dispose();
+            }
+		});
 		this.vInicioSesion.onClickIniciar(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {

@@ -1,10 +1,6 @@
 package ar.edu.unlu.chatmvc.controlador;
 
 import java.rmi.RemoteException;
-import java.util.Observable;
-import java.util.Observer;
-
-import ar.edu.unlu.chatmvc.modelo.Chat;
 import ar.edu.unlu.chatmvc.modelo.Eventos;
 import ar.edu.unlu.chatmvc.modelo.IChat;
 import ar.edu.unlu.chatmvc.modelo.IMensaje;
@@ -78,6 +74,15 @@ public class Controlador implements IControladorRemoto {
 	public void desconectarUsuario(int usuarioId) {
 		try {
 			this.modelo.desconectarUsuario(usuarioId);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void cerrarApp() {
+		try {
+			this.modelo.cerrar(this.usuario.getId());
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
