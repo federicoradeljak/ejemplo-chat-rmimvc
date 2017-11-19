@@ -1,14 +1,14 @@
 package ar.edu.unlu.chatmvc.servidor;
 
-import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
 import ar.edu.unlu.chatmvc.modelo.Chat;
-import ar.edu.unlu.mvcrmi.Util;
-import ar.edu.unlu.mvcrmi.servidor.Servidor;
+import ar.edu.unlu.rmimvc.RMIMVCException;
+import ar.edu.unlu.rmimvc.Util;
+import ar.edu.unlu.rmimvc.servidor.Servidor;
 
 public class AppServidor {
 
@@ -37,7 +37,7 @@ public class AppServidor {
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (AlreadyBoundException e) {
+		} catch (RMIMVCException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

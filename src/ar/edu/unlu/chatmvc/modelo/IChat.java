@@ -3,8 +3,8 @@ package ar.edu.unlu.chatmvc.modelo;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-import ar.edu.unlu.mvcrmi.observer.IObservableRemoto;
-import ar.edu.unlu.mvcrmi.observer.IObservadorRemoto;
+import ar.edu.unlu.rmimvc.observer.IObservableRemoto;
+import ar.edu.unlu.rmimvc.observer.IObservadorRemoto;
 
 public interface IChat extends IObservableRemoto {
 

@@ -4,8 +4,8 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import ar.edu.unlu.mvcrmi.observer.IObservadorRemoto;
-import ar.edu.unlu.mvcrmi.observer.ObservableRemoto;
+import ar.edu.unlu.rmimvc.observer.IObservadorRemoto;
+import ar.edu.unlu.rmimvc.observer.ObservableRemoto;
 
 public class Chat extends ObservableRemoto implements IChat {
 	private HashMap<Integer, Usuario> usuarios;

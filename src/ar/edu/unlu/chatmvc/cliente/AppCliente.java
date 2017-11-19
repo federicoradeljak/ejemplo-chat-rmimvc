@@ -1,8 +1,5 @@
 package ar.edu.unlu.chatmvc.cliente;
 
-import java.rmi.AccessException;
-import java.rmi.AlreadyBoundException;
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
@@ -11,8 +8,9 @@ import javax.swing.JOptionPane;
 import ar.edu.unlu.chatmvc.controlador.Controlador;
 import ar.edu.unlu.chatmvc.vista.IVista;
 import ar.edu.unlu.chatmvc.vista.grafica.VistaGrafica;
-import ar.edu.unlu.mvcrmi.Util;
-import ar.edu.unlu.mvcrmi.cliente.Cliente;
+import ar.edu.unlu.rmimvc.RMIMVCException;
+import ar.edu.unlu.rmimvc.Util;
+import ar.edu.unlu.rmimvc.cliente.Cliente;
 
 public class AppCliente {
 
@@ -56,16 +54,10 @@ public class AppCliente {
 		vista.iniciar();
 		try {
 			c.iniciar(controlador);
-		} catch (AccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (AlreadyBoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NotBoundException e) {
+		} catch (RMIMVCException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -6,8 +6,8 @@ import ar.edu.unlu.chatmvc.modelo.IChat;
 import ar.edu.unlu.chatmvc.modelo.IMensaje;
 import ar.edu.unlu.chatmvc.modelo.IUsuario;
 import ar.edu.unlu.chatmvc.vista.IVista;
-import ar.edu.unlu.mvcrmi.cliente.IControladorRemoto;
-import ar.edu.unlu.mvcrmi.observer.IObservableRemoto;
+import ar.edu.unlu.rmimvc.cliente.IControladorRemoto;
+import ar.edu.unlu.rmimvc.observer.IObservableRemoto;
 
 public class Controlador implements IControladorRemoto {
 	
@@ -91,7 +91,7 @@ public class Controlador implements IControladorRemoto {
 	}
 
 	@Override
-	public void actualizar(Object arg0) throws RemoteException {
+	public void actualizar(IObservableRemoto observable, Object arg0) throws RemoteException {
 		if (arg0 instanceof Eventos) {
 			switch ((Eventos) arg0) {
 			case CAMBIO_LISTA_USUARIOS:
