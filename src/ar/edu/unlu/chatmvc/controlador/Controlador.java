@@ -83,6 +83,7 @@ public class Controlador implements IControladorRemoto {
 	public void cerrarApp() {
 		try {
 			this.modelo.cerrar(this, this.usuario.getId());
+			System.exit(0);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

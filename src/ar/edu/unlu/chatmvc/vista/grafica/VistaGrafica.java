@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import ar.edu.unlu.chatmvc.controlador.Controlador;
 import ar.edu.unlu.chatmvc.modelo.IMensaje;
@@ -29,12 +30,11 @@ public class VistaGrafica implements IVista {
 				vPrincipal.setTextoMensaje("");
 			}
 		});
-		this.vPrincipal.onCloseWindow(new WindowAdapter() {
+		this.vPrincipal.addWindowListener(new WindowAdapter() {
 			@Override
-            public void windowClosing(WindowEvent e) {
-                controlador.cerrarApp();
-                vPrincipal.dispose();
-            }
+			public void windowClosing(WindowEvent arg0) {
+				controlador.cerrarApp();
+			}			
 		});
 		this.vInicioSesion.onClickIniciar(new ActionListener() {
 			@Override

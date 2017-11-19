@@ -35,7 +35,6 @@ public class VentanaPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaPrincipal() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -104,9 +103,5 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setTextoMensaje(String texto) {
 		this.textMensaje.setText(texto);
-	}
-	
-	public void onCloseWindow(WindowAdapter wa) {
-		addWindowStateListener(wa);
 	}
 }
