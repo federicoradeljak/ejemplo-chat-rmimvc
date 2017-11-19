@@ -4,6 +4,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 import ar.edu.unlu.mvcrmi.observer.IObservableRemoto;
+import ar.edu.unlu.mvcrmi.observer.IObservadorRemoto;
 
 public interface IChat extends IObservableRemoto {
 
@@ -19,6 +20,6 @@ public interface IChat extends IObservableRemoto {
 
 	void enviarMensajeDelSistema(String mensaje) throws RemoteException;
 	
-	void cerrar(int usuarioId) throws RemoteException;
+	void cerrar(IObservadorRemoto controlador, int usuarioId) throws RemoteException;
 
 }

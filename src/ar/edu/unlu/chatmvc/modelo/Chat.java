@@ -3,6 +3,8 @@ package ar.edu.unlu.chatmvc.modelo;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import ar.edu.unlu.mvcrmi.observer.IObservadorRemoto;
 import ar.edu.unlu.mvcrmi.observer.ObservableRemoto;
 
 public class Chat extends ObservableRemoto implements IChat {
@@ -73,7 +75,8 @@ public class Chat extends ObservableRemoto implements IChat {
 		this.notificarObservadores(Eventos.NUEVO_MENSAJE);
 	}
 	
-	public void cerrar(int usuarioId) throws RemoteException {
+	public void cerrar(IObservadorRemoto controlador, int usuarioId) throws RemoteException {
+		this.removerObservador(controlador);
 		this.desconectarUsuario(usuarioId);
 	}
 }
